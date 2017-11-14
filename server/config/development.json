@@ -1,0 +1,12 @@
+{
+  "env": "development",
+  "ip": "0.0.0.0",
+  "port": "3100",
+  "version": "0",
+  "api": {
+    "ny": {
+      "url": "https://api.nytimes.com/svc/news/v3/content/all/all.json",
+      "key": "0bdbbbf0293e492080174450ad664ecc"
+    }
+  }
+}
