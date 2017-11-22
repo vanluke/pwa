@@ -10,7 +10,12 @@ import precss from 'precss';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 import PwaManifest from 'pwa-manifest-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
+import config from '../server/config';
 /* eslint-enable */
+
+const serverIp = config.get('ip');
+const serverPort = config.get('port');
+const nyRequestUrl = `http://${serverIp}:${serverPort}/api/v0/ny`;
 
 export default function ({ENV, DEV, PROD}) {
   return [
@@ -60,6 +65,7 @@ export default function ({ENV, DEV, PROD}) {
       short_name: 'PWA',
       description: 'Progressive Web App!',
       background_color: '#f3e333',
+      theme_color: '#fff',
       icons: [],
     }),
     new OfflinePlugin({
@@ -83,6 +89,7 @@ export default function ({ENV, DEV, PROD}) {
       },
       externals: [
         '/',
+        nyRequestUrl,
       ],
       AppCache: PROD,
     }),

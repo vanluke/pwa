@@ -1,5 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
+import {StaticRouter} from 'react-router-dom';
 import Timeswires from './timeswires';
 import Timeswire from './timeswire';
 
@@ -14,6 +15,7 @@ describe('Timeswires', () => {
       thumbnailStandard: 'image.png',
       createdDate: '',
       byline: 'byline',
+      url: '',
     }],
     isBussy: false,
   };
@@ -25,7 +27,8 @@ describe('Timeswires', () => {
   });
 
   it('should render props', () => {
-    const wrapper = mount(<Timeswires {...props} />);
+    const wrapper = mount(<StaticRouter context={{}}>
+      <Timeswires {...props} /></StaticRouter>).find(Timeswires);
 
     expect(wrapper.props()).toEqual(props);
   });

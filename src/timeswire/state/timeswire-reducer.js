@@ -15,4 +15,4 @@ export default mapToReducer({
   [LOAD_TIMESWIRE]: state => state.set('isBussy', true),
   [LOAD_TIMESWIRE_SUCCESS]: (state, {payload}) => state.set('isBussy', false).set('timeswires', payload.timeswires),
   [LOAD_TIMESWIRE_ERROR]: (state, {payload}) => state.set('isBussy', false).set('error', payload.error),
-})(initState)
+})(initState);

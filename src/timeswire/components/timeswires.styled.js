@@ -3,7 +3,7 @@ import {Cell} from './timeswire';
 import {aliceblue} from 'styles/palette';
 
 export const Container = styled.section`
-  position: relative:
+  position: relative;
 `;
 
 export const Grid = styled.div`

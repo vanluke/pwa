@@ -72,9 +72,5 @@ export default {
 
   plugins: [
     ...plugins,
-    new webpack.NormalModuleReplacementPlugin(
-      /bundles.js/,
-      './async-bundles.js',
-    ),
   ],
 };

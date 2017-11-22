@@ -21,7 +21,6 @@ describe('Timeswire service', () => {
     const response = [{
       id: 1,
     }];
-   
     const expected = [...response];
 
     nock(endpoint).get(`/${timeswire}`).reply(200, {response});

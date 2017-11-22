@@ -1,6 +1,5 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-// @storybook/cliimport {action} from '@storybook/addon-actions';
 import Timeswire from './timeswire';
 
 const props = {

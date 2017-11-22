@@ -7,7 +7,7 @@ import {
 import Timeswires from './components/timeswires';
 import {selectTimeswires, selectIsBussy} from './state/timeswire-selectors';
 
-export class Timeswire extends PureComponent {
+class Timeswire extends PureComponent {
   componentDidMount() {
     const {initialize} = this.props;
     initialize();

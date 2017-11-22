@@ -11,6 +11,7 @@ import {
   Time,
   At,
   Grid,
+  Link,
 } from './timeswire.styled';
 
 const Timeswire = ({
@@ -21,6 +22,7 @@ const Timeswire = ({
   thumbnailStandard,
   createdDate,
   byline,
+  url,
 }) => (<Cell>
   <Meta>
     <Picture
@@ -31,7 +33,7 @@ const Timeswire = ({
     <Category>{byline}</Category>
   </Meta>
   <Grid>
-    <Title>{title}</Title>
+    <Title><Link target="_new" to={url}>{title}</Link></Title>
     <Meta>
       <Time>{moment(createdDate).format('MMMM Do YYYY')}</Time>
       <At>{section}</At>
@@ -46,6 +48,7 @@ Timeswire.propTypes = {
   thumbnailStandard: PropTypes.string.isRequired,
   createdDate: PropTypes.string.isRequired,
   byline: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   multimedia: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(
@@ -54,7 +57,6 @@ Timeswire.propTypes = {
       }),
     ),
   ]),
-  
 };
 
 Timeswire.defaultProps = {
